@@ -1,0 +1,1 @@
+web: gunicorn streamershieldd.wsgi --log-file -

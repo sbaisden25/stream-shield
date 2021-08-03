@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+
+  <script src="https://js.stripe.com/v3/"></script>  
+  <script src="{% static 'js/main.js' %}"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
+  <link rel="stylesheet" href="{% static '/style/index.css'%}">
+
+
+  <title>Streamer Shield</title>
+</head>
+
+{% block content %}
+
+<body>
+  
+
+
+  <header>
+    <section class="head-l">
+      <img src="{% static '/images/swat.png'%}" alt="swat car" class="swat-m" data-aos="fade-down-right" data-aos-delay="50" data-aos-duration="1000">
+      <img src="{% static '/images/swat.png'%}" alt="swat car" class="swat-b" data-aos="fade-down-right" data-aos-delay="200" data-aos-duration="1000">
+    </section>
+    <section class="head-r" data-aos="fade-up-left" data-aos-delay="200" data-aos-duration="1000">
+     
+      <h1>Payment Cancelled</h1>
+      
+      <a href="#started">Get Started</a>
+    </section>
+  </header>
+
+  <main>
+    <div class="whats-offered" id='offered'>
+      <h1>What We Offer</h1>
+      <div class="offers">
+        <section class="card" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1000">
+          <img src="{% static '/icons/message.svg'%}" alt="response time">
+          <h2>Communication</h2>
+          <p>We keep clients updated as we communicate with potential harrassment tools such as local law enforcement or food delivery sources.</p>
+        </section>
+        <section class="card" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+          <img src="{% static '/icons/shield.svg'%}" alt="response time">
+          <h2>Peace of Mind</h2>
+          <p>Swatting and unwarranted food deliveries are an unfortunate reality that most content creator's face.  We help you minimize risk of such events.</p>
+</p>
+        </section>
+        <section class="card" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
+          <img src="{% static '/icons/lock.svg'%}" alt="response time">
+          <h2>Law Enforcement Consultants</h2>
+          <p>We have an internal network of law enforcement professionals we consult to gauge the best course of action for unique cases.</p>
+        </section>
+      </div>
+    </div>
+
+    <div class="prices" id='started'>
+      <h1>Simple, transparent prices</h1>
+      <span>No contracts. No surprise fees.</span>
+      <div class="plans">
+        <section class="package p1" data-aos="fade-right" data-aos-delay="0" data-aos-duration="1000">
+          <h2>Gold Shield</h2>
+          <p id='sub-title'>Basic Plan</p>
+          <h3>$9.99<b>/month</b></h3>
+          <div>
+            <h4>Minimize Swatting Risk</h4>
+          </div>
+          <div>
+            <p>Food Delivery</p>
+            <h4>Harassment Protection</h4>
+          </div>
+          <div>
+            <p>Number of Addresses</p>
+            <h4>1</h4>
+          </div>
+			<button onclick="window.location.href='{% url 'gold_shield' %}';" class="button is-primary">Learn More</a></button>
+        </section>
+        <section class="package popular" data-aos="fade-down" data-aos-delay="0" data-aos-duration="1000">
+          <span class="pop">Popular</span>
+          <h2>Diamond Shield</h2>
+          <p id='sub-title'>Standard Plan</p>
+          <h3>$99.99<b>/year</b></h3>
+          <div>
+            <h4>Minimize Swatting Risk</h4>
+          </div>
+          <div>
+            <p>Food Delivery</p>
+            <h4>Harassment Protection</h4>
+          </div>
+          <div>
+            <p>Number of Addresses</p>
+            <h4>3</h4>
+          </div>
+
+      <button onclick="window.location.href='{% url 'diamond_shield' %}';" class="button is-primary">Learn More</button>
+
+        </section>
+        <section class="package p3" data-aos="fade-left" data-aos-delay="0" data-aos-duration="1000">
+          <h2>Enterprise Shield</h2>
+          <p id='sub-title'>Enterprise Plan</p>
+          <h3>Varies<b>/month</b></h3>
+          <div>
+            <p></p>
+            <h4>Minimize Swatting Risk</h4>
+          </div>
+          <div>
+            <p>Food Delivery</p>
+            <h4>Harassment Protection</h4>
+          </div>
+          <div>
+            <p>Number of Addresses</p>
+            <h4>Varies</h4>
+          </div>
+        <button onclick="window.location.href='mailto:swatlesslive@gmail.com';">Contact Us</button>
+        </section>
+      </div>
+    </div>
+  </main>
+
+
+</body>
+
+{% endblock %}
+
+</html>
